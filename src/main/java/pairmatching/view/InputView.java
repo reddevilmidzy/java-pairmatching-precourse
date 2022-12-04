@@ -2,6 +2,9 @@ package pairmatching.view;
 
 import camp.nextstep.edu.missionutils.Console;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class InputView {
 
     public String chooseFeature() {
@@ -13,6 +16,11 @@ public class InputView {
         return readInput();
     }
 
+    public List<String> chooseOption() {
+        System.out.println("과정, 레벨, 미션을 선택하세요.");
+        String input = readInput();
+        return Arrays.asList(input.split(", "));
+    }
 
     private String readInput() {
         return  Console.readLine();
