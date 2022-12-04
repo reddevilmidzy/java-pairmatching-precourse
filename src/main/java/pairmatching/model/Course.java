@@ -14,11 +14,13 @@ public enum Course {
         this.route = route;
     }
 
-    public static Course valueOfLabel(String label) {
-        return Arrays.stream(values())
-                .filter(value -> value.name.equals(label))
-                .findAny()
-                .orElse(null);
+    public static boolean valueOfCourse(String label) {
+        for (Course course : Course.values()) {
+            if (course.name.equals(label)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static String getRoute(String name) {
