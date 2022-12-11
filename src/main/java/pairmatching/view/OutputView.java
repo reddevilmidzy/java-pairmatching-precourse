@@ -8,9 +8,11 @@ import java.util.List;
 
 public class OutputView {
     private static final String BOUNDARY = "#############################################";
-    private static final String SEPARATE = "|";
+    private static final String SEPARATE_MISSION = "|";
     private static final String COURSE = "과정";
+    private static final String LEVEL = "레벨";
     private static final String MISSION = "미션";
+    private static final String SEPARATE_CREW = ":";
 
 
     public void printCourseMissionLevel(Mission mission) {
@@ -25,8 +27,13 @@ public class OutputView {
         System.out.println(BOUNDARY);
     }
 
+    public void printExample() {
+        System.out.printf("%s, %s, %s을 선택하세요.", COURSE, LEVEL, MISSION);
+        System.out.printf("ex) %s, %s, %s", Course.BACKEND, Level.LEVEL1, "자동차경주");
+    }
+
     private String formattedMission(Mission mission, Level level) {
         List<String> levelOfMission = mission.getMission(level);
-        return String.join(SEPARATE, levelOfMission);
+        return String.join(SEPARATE_MISSION, levelOfMission);
     }
 }

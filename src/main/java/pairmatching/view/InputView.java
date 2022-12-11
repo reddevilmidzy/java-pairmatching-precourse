@@ -17,7 +17,6 @@ public class InputView {
     }
 
     public List<String> chooseOption() {
-        System.out.println("과정, 레벨, 미션을 선택하세요.");
         String input = readInput();
         return Arrays.asList(input.split(","));
     }
