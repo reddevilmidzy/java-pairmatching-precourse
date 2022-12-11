@@ -14,10 +14,11 @@ public enum FeatureType {
         this.label = label;
     }
 
-    public static FeatureType valueOfLabel(String label) {
+    public static String valueOfLabel(String label) {
         return Arrays.stream(values())
                 .filter(value -> value.label.equals(label))
                 .findAny()
-                .orElseThrow(IllegalArgumentException::new);
+                .orElseThrow(IllegalArgumentException::new)
+                .toString();
     }
 }
