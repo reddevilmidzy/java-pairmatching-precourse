@@ -1,5 +1,6 @@
 package pairmatching.model;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -25,11 +26,11 @@ public class Mission {
     }
 
     private void setLevelOne() {
-        mission.put(Level.LEVEL1, List.of("자동차경주", "로또", "숫자야구게임"));
+        mission.put(Level.LEVEL1, Arrays.asList("자동차경주", "로또", "숫자야구게임"));
     }
 
     private void setLevelTwo() {
-        mission.put(Level.LEVEL2, List.of("장바구니", "결제", "지하철노선도"));
+        mission.put(Level.LEVEL2, Arrays.asList("장바구니", "결제", "지하철노선도"));
     }
 
     private void setLevelThree() {
@@ -37,7 +38,7 @@ public class Mission {
     }
 
     private void setLevelFour() {
-        mission.put(Level.LEVEL4, List.of("성능개선", "배포"));
+        mission.put(Level.LEVEL4, Arrays.asList("성능개선", "배포"));
     }
 
     private void setLevelFive() {
