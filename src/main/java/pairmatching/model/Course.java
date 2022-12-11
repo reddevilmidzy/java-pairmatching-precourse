@@ -12,7 +12,7 @@ public enum Course {
         this.name = name;
     }
 
-    public static String tmp(String label) {
+    public static String getCourse(String label) {
         return Arrays.stream(values())
                 .filter(value -> value.name.equals(label))
                 .findAny()
