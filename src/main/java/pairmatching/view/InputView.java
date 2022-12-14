@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class InputView {
+    private static final String SPACE = " ";
+    private static final String REMOVE_WORD = "";
 
     public String chooseFeature() {
         System.out.println("기능을 선택하세요.");
@@ -18,6 +20,7 @@ public class InputView {
 
     public List<String> chooseOption() {
         String input = readInput();
+        input  = input.replace(SPACE, REMOVE_WORD);
         return Arrays.asList(input.split(","));
     }
 
