@@ -1,7 +1,7 @@
 package pairmatching.model;
 
 public class Feature {
-    private String feature;
+    private final String feature;
 
     public Feature(String feature) {
         this.feature = validate(feature);
