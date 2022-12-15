@@ -6,18 +6,24 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Matching {
     private List<String> crewNames = new ArrayList<>();
     private final Map<String, String> route = new HashMap<>();
 
-    private List<List<String>> fairedCrew = new ArrayList<>();
+    private final List<List<String>> matchedCrew = new ArrayList<>();
 
     public Matching(String course, String level, String mission) {
         setRoute();
         readFile(course);
         match();
+        System.out.println(crewNames.toString());
+        System.out.println(matchedCrew);
         // TODO: 크루 겹치면 재배치 기능
     }
 
@@ -69,11 +75,11 @@ public class Matching {
     }
 
     private void addTwoPair(int index) {
-        fairedCrew.add(Arrays.asList(crewNames.get(index), crewNames.get(index + 1)));
+        matchedCrew.add(Arrays.asList(crewNames.get(index), crewNames.get(index + 1)));
     }
 
     private void addThreePair(int index) {
-        fairedCrew.add(Arrays.asList(crewNames.get(index), crewNames.get(index + 1), crewNames.get(index + 2)));
+        matchedCrew.add(Arrays.asList(crewNames.get(index), crewNames.get(index + 1), crewNames.get(index + 2)));
     }
 
     private List<String> shuffledCrew(List<String> crewNames) {
