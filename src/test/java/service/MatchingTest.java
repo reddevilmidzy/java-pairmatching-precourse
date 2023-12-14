@@ -1,5 +1,7 @@
 package service;
 
+import model.Course;
+import model.Crews;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +18,7 @@ class MatchingTest {
         Matching matching = new Matching();
 
         //when
-        List<List<String>> match = matching.match(List.of("원투", "쓰리", "포파", "이브"));
+        List<Crews> match = matching.match(Course.FRONTEND, List.of("원투", "쓰리", "포파", "이브"));
 
         //then
         boolean allMatch = match.stream()
@@ -31,10 +33,10 @@ class MatchingTest {
         Matching matching = new Matching();
 
         //when
-        List<List<String>> match = matching.match(List.of("원투", "쓰리", "포파", "이브", "식스"));
+        List<Crews> match = matching.match(Course.BACKEND, List.of("원투", "쓰리", "포파", "이브", "식스"));
 
         //then
-        List<String> lastMatching = match.get(match.size() - 1);
+        Crews lastMatching = match.get(match.size() - 1);
         assertThat(lastMatching.size()).isEqualTo(3);
     }
 }

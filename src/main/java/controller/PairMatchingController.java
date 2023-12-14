@@ -35,9 +35,10 @@ public class PairMatchingController {
         Course course = matchingInfo.getCourse();
         try {
             List<String> names = ReadingFile.readCrewNames(course);
-            Crews crews = Crews.from(course, names);
             Matching matching = new Matching();
-            List<List<String>> match = matching.match(names);
+            List<Crews> match = matching.match(course, names);
+
+            outputView.printMatchingResult(match);
         } catch (IOException exception) {
             outputView.printErrorMessage(exception);
         }

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Crews {
@@ -17,4 +18,21 @@ public class Crews {
         return new Crews(crews);
     }
 
+    public static Crews of(Course course, String name1, String name2) {
+        List<Crew> crews = List.of(new Crew(course, name1), new Crew(course, name2));
+        return new Crews(crews);
+    }
+
+    public static Crews of(Course course, String name1, String name2, String name3) {
+        List<Crew> crews = List.of(new Crew(course, name1), new Crew(course, name2), new Crew(course, name3));
+        return new Crews(crews);
+    }
+
+    public int size() {
+        return crews.size();
+    }
+
+    public Iterator<Crew> getIterator() {
+        return crews.iterator();
+    }
 }
