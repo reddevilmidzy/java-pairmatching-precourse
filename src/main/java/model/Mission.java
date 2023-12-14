@@ -11,10 +11,12 @@ public class Mission {
 
     private final Course course;
     private final Level level;
+    private final String name;
 
-    public Mission(Course course, Level level) {
+    public Mission(Course course, Level level, String name) {
         this.course = course;
         this.level = level;
+        this.name = name;
     }
 
     public static Mission from(String value) {
@@ -25,7 +27,11 @@ public class Mission {
         Course course = Course.nameOf(separateValue.get(COURSE_INDEX));
         Level level = Level.nameOf(separateValue.get(LEVEL_INDEX));
         String missionName = level.getMission(separateValue.get(MISSION_INDEX));
-        return new Mission(course, level);
+        return new Mission(course, level, missionName);
+    }
+
+    public Course getCourse() {
+        return course;
     }
 
     private static void validate(String value) {
@@ -38,5 +44,21 @@ public class Mission {
         if (value.contains(",,")) {
             throw new IllegalArgumentException();
         }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Mission mission)) {
+            return false;
+        }
+        return course.equals(mission.course) && level.equals(mission.level);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
