@@ -31,8 +31,14 @@ public class MatchingRepository {
     }
 
     public boolean hasMatching(Mission mission) {
-        System.out.println(missionRepository.keySet());
         return missionRepository.containsKey(mission);
     }
 
+    public void reset() {
+        for (Level level : repository.keySet()) {
+            List<Crews> crews = repository.get(level);
+            crews.clear();
+        }
+        missionRepository.clear();
+    }
 }

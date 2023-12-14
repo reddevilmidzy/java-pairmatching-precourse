@@ -31,4 +31,9 @@ public class OutputView {
         }
         System.out.println();
     }
+
+    public void printReset() {
+        System.out.println("초기화 되었습니다.");
+        System.out.println();
+    }
 }

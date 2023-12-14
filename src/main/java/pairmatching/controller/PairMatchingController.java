@@ -35,12 +35,20 @@ public class PairMatchingController {
             if (function.equals(Function.MATCHING)) {
                 pairMatching(matchingRepository);
             }
+            if (function.equals(Function.RESET)) {
+                pairReset(matchingRepository);
+            }
             if (function.equals(Function.QUIT)) {
                 break;
             }
 
         }
 
+    }
+
+    private void pairReset(MatchingRepository matchingRepository) {
+        matchingRepository.reset();
+        outputView.printReset();
     }
 
     private HashMap<Level, List<Crews>> createRepository() {
