@@ -1,6 +1,7 @@
 package controller;
 
 import model.Function;
+import model.Mission;
 import view.InputView;
 import view.OutputView;
 
@@ -28,5 +29,20 @@ public class InputController {
     private Function readFunction() {
         String value = inputView.readFunction();
         return Function.cmdOf(value);
+    }
+
+    public Mission getMatchingInfo() {
+        while (true) {
+            try {
+                return readMatchingInfo();
+            } catch (IllegalArgumentException exception) {
+                outputView.printErrorMessage(exception);
+            }
+        }
+    }
+
+    private Mission readMatchingInfo() {
+        String value = inputView.readMatchingInfo();
+        return Mission.from(value);
     }
 }
