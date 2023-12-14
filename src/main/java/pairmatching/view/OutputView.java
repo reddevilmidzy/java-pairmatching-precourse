@@ -19,6 +19,7 @@ public class OutputView {
         for (Crews crews : matched) {
             printValues(crews.getIterator());
         }
+        System.out.println();
     }
 
     private void printValues(Iterator<Crew> iterator) {

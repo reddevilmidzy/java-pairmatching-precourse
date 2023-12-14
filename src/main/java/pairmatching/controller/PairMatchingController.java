@@ -29,9 +29,15 @@ public class PairMatchingController {
 
         MatchingRepository matchingRepository = new MatchingRepository(createRepository());
 
-        Function function = inputController.getFunction();
-        if (function.equals(Function.MATCHING)) {
-            pairMatching(matchingRepository);
+        while (true) {
+            Function function = inputController.getFunction();
+            if (function.equals(Function.MATCHING)) {
+                pairMatching(matchingRepository);
+            }
+            if (function.equals(Function.QUIT)) {
+                break;
+            }
+
         }
 
     }
