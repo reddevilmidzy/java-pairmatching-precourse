@@ -31,6 +31,7 @@ public class MatchingRepository {
     }
 
     public boolean hasMatching(Mission mission) {
+        System.out.println(missionRepository.keySet());
         return missionRepository.containsKey(mission);
     }
 

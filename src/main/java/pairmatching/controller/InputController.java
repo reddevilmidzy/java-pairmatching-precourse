@@ -2,6 +2,7 @@ package pairmatching.controller;
 
 import pairmatching.model.Function;
 import pairmatching.model.Mission;
+import pairmatching.model.REMATCH;
 import pairmatching.view.InputView;
 import pairmatching.view.OutputView;
 
@@ -45,4 +46,21 @@ public class InputController {
         String value = inputView.readMatchingInfo();
         return Mission.from(value);
     }
+
+
+    public REMATCH getRematch() {
+        while (true) {
+            try {
+                return readRematch();
+            } catch (IllegalArgumentException exception) {
+                outputView.printErrorMessage(exception);
+            }
+        }
+    }
+
+    private REMATCH readRematch() {
+        String value = inputView.readRematching();
+        return REMATCH.fromCmd(value);
+    }
+
 }

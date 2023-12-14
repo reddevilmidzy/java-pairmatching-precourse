@@ -5,6 +5,7 @@ import pairmatching.model.Crews;
 import pairmatching.model.Function;
 import pairmatching.model.Level;
 import pairmatching.model.Mission;
+import pairmatching.model.REMATCH;
 import pairmatching.repository.MatchingRepository;
 import pairmatching.service.Matching;
 import pairmatching.util.ReadingFile;
@@ -57,14 +58,15 @@ public class PairMatchingController {
         Matching matching = new Matching();
         try {
             if (matchingRepository.hasMatching(matchingInfo)) {
-                //TODO: 매칭 정보가 있습니다. 다시 매칭하시겠습니까?
+                REMATCH rematch = inputController.getRematch();
+                if (rematch.equals(REMATCH.NO)) {
+                    return;
+                }
             }
-
             List<String> names = ReadingFile.readCrewNames(course);
             List<Crews> match = matching.match(course, names);
 
             boolean matchingSuccess = matchingProcess(matchingRepository, matchingInfo, match);
-
 
         } catch (IOException exception) {
             outputView.printErrorMessage(exception);

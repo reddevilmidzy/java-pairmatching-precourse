@@ -2,6 +2,7 @@ package pairmatching.model;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Mission {
 
@@ -58,11 +59,11 @@ public class Mission {
         if (!(obj instanceof Mission mission)) {
             return false;
         }
-        return course.equals(mission.course) && level.equals(mission.level);
+        return course.equals(mission.course) && level.equals(mission.level) && name.equals(mission.name);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(course, level, name);
     }
 }
