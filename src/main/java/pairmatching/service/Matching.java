@@ -11,8 +11,8 @@ public class Matching {
 
 
     public List<Crews> match(Course course, List<String> crewNames) {
-        int n = crewNames.size();
         List<String> shuffledCrew = Randoms.shuffle(crewNames);
+        int n = shuffledCrew.size();
         List<Crews> result = new ArrayList<>();
         Crews matched;
         for (int i = 0; i < n - 1; i = i + 2) {
