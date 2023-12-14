@@ -34,6 +34,10 @@ public class MatchingRepository {
         return missionRepository.containsKey(mission);
     }
 
+    public List<Crews> getMatching(Mission mission) {
+        return missionRepository.get(mission);
+    }
+
     public void reset() {
         for (Level level : repository.keySet()) {
             List<Crews> crews = repository.get(level);

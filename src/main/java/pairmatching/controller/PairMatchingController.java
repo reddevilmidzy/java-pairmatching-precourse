@@ -1,5 +1,6 @@
 package pairmatching.controller;
 
+import pairmatching.constant.ErrorMessage;
 import pairmatching.model.Course;
 import pairmatching.model.Crews;
 import pairmatching.model.Function;
@@ -35,15 +36,28 @@ public class PairMatchingController {
             if (function.equals(Function.MATCHING)) {
                 pairMatching(matchingRepository);
             }
+            if (function.equals(Function.LOOK_UP)) {
+                pairLookUp(matchingRepository);
+            }
             if (function.equals(Function.RESET)) {
                 pairReset(matchingRepository);
             }
             if (function.equals(Function.QUIT)) {
                 break;
             }
-
         }
 
+    }
+
+    private void pairLookUp(MatchingRepository matchingRepository) {
+        Mission matchingInfo = inputController.getMatchingInfo();
+        if (matchingRepository.hasMatching(matchingInfo)) {
+            List<Crews> matched = matchingRepository.getMatching(matchingInfo);
+            outputView.printMatchingResult(matched);
+            return;
+        }
+        //TODO: 여기에서 출력하는거 뭔가 안어울림
+        outputView.printErrorMessage(ErrorMessage.NO_MATCHING.getMessage());
     }
 
     private void pairReset(MatchingRepository matchingRepository) {

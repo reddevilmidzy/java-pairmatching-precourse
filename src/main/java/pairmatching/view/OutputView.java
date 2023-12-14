@@ -14,6 +14,10 @@ public class OutputView {
         System.out.printf(ERROR_FORM, throwable.getMessage());
     }
 
+    public void printErrorMessage(String message) {
+        System.out.printf(ERROR_FORM, message);
+    }
+
     public void printMatchingResult(List<Crews> matched) {
         System.out.println("페어 매칭 결과입니다.");
         for (Crews crews : matched) {
