@@ -1,9 +1,9 @@
 package pairmatching;
 
-import controller.InputController;
-import controller.PairMatchingController;
-import view.InputView;
-import view.OutputView;
+import pairmatching.controller.InputController;
+import pairmatching.controller.PairMatchingController;
+import pairmatching.view.InputView;
+import pairmatching.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {

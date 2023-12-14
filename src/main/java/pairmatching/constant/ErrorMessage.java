@@ -1,4 +1,4 @@
-package constant;
+package pairmatching.constant;
 
 public enum ErrorMessage {
 

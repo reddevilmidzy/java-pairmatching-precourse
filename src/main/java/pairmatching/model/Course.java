@@ -1,6 +1,6 @@
-package model;
+package pairmatching.model;
 
-import constant.ErrorMessage;
+import pairmatching.constant.ErrorMessage;
 
 public enum Course {
     BACKEND("백엔드"),

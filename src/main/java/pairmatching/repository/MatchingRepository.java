@@ -1,7 +1,7 @@
-package repository;
+package pairmatching.repository;
 
-import model.Crew;
-import model.Mission;
+import pairmatching.model.Crew;
+import pairmatching.model.Mission;
 
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package model;
+package pairmatching.model;
 
-import constant.ErrorMessage;
+import pairmatching.constant.ErrorMessage;
 
 import java.util.List;
 

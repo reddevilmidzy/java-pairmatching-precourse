@@ -1,12 +1,12 @@
-package controller;
+package pairmatching.controller;
 
-import model.Course;
-import model.Crews;
-import model.Function;
-import model.Mission;
-import service.Matching;
-import util.ReadingFile;
-import view.OutputView;
+import pairmatching.model.Course;
+import pairmatching.model.Crews;
+import pairmatching.model.Function;
+import pairmatching.model.Mission;
+import pairmatching.service.Matching;
+import pairmatching.util.ReadingFile;
+import pairmatching.view.OutputView;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,8 +37,9 @@ public class PairMatchingController {
             List<String> names = ReadingFile.readCrewNames(course);
             Matching matching = new Matching();
             List<Crews> match = matching.match(course, names);
-
             outputView.printMatchingResult(match);
+
+
         } catch (IOException exception) {
             outputView.printErrorMessage(exception);
         }

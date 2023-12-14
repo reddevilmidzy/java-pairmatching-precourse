@@ -1,9 +1,9 @@
-package controller;
+package pairmatching.controller;
 
-import model.Function;
-import model.Mission;
-import view.InputView;
-import view.OutputView;
+import pairmatching.model.Function;
+import pairmatching.model.Mission;
+import pairmatching.view.InputView;
+import pairmatching.view.OutputView;
 
 public class InputController {
 

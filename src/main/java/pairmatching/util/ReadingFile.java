@@ -1,6 +1,6 @@
-package util;
+package pairmatching.util;
 
-import model.Course;
+import pairmatching.model.Course;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

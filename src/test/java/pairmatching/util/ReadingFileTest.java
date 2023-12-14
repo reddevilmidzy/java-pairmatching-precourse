@@ -1,8 +1,9 @@
-package util;
+package pairmatching.util;
 
-import model.Course;
+import pairmatching.model.Course;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pairmatching.util.ReadingFile;
 
 import java.io.IOException;
 import java.util.List;

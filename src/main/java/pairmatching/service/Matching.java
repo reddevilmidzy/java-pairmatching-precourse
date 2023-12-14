@@ -1,8 +1,8 @@
-package service;
+package pairmatching.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import model.Course;
-import model.Crews;
+import pairmatching.model.Course;
+import pairmatching.model.Crews;
 
 import java.util.ArrayList;
 import java.util.List;

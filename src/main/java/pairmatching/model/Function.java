@@ -1,6 +1,6 @@
-package model;
+package pairmatching.model;
 
-import constant.ErrorMessage;
+import pairmatching.constant.ErrorMessage;
 
 public enum Function {
     MATCHING("1", "페어 매칭"),

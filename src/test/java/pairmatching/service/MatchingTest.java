@@ -1,9 +1,10 @@
-package service;
+package pairmatching.service;
 
-import model.Course;
-import model.Crews;
+import pairmatching.model.Course;
+import pairmatching.model.Crews;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pairmatching.service.Matching;
 
 import java.util.List;
 

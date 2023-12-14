@@ -1,7 +1,7 @@
-package view;
+package pairmatching.view;
 
-import model.Crew;
-import model.Crews;
+import pairmatching.model.Crew;
+import pairmatching.model.Crews;
 
 import java.util.Iterator;
 import java.util.List;
