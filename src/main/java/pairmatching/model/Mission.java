@@ -46,6 +46,10 @@ public class Mission {
         }
     }
 
+    public Level getLevel() {
+        return level;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

@@ -35,4 +35,22 @@ public class Crews {
     public Iterator<Crew> getIterator() {
         return crews.iterator();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Crews target)) {
+            return false;
+        }
+        int count = 0;
+
+        for (Crew matched : target.crews) {
+            if (crews.contains(matched)) {
+                count++;
+            }
+        }
+        return count > 1;
+    }
 }

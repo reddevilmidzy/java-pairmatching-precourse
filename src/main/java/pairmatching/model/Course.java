@@ -6,7 +6,7 @@ public enum Course {
     BACKEND("백엔드"),
     FRONTEND("프론트엔드");
 
-    private String name;
+    private final String name;
 
     Course(String name) {
         this.name = name;
@@ -21,5 +21,9 @@ public enum Course {
             }
         }
         throw new IllegalArgumentException(ErrorMessage.INVALID_COURSE.getMessage());
+    }
+
+    public String getName() {
+        return name;
     }
 }
